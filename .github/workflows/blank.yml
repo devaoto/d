@@ -1,0 +1,20 @@
+name: Format
+
+on: push
+
+jobs:
+  format-code:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: stefanzweifel/git-auto-commit-action@v2.3.0
+        with:
+          commit_message: Apply automatic changes
+          branch: ${{ github.head_ref }}
+          commit_options: '--no-verify --signoff'
+          file_pattern: src/\*.js
+env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
