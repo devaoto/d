@@ -1,1 +1,1 @@
-console.log("Man I hate my life");
+console.log("Man, I hate my life");
